@@ -1,0 +1,248 @@
+1)
+
+package main
+
+import "fmt"
+
+func main() {
+   var a int = 10   
+   fmt.Printf("Address of a variable is : %x\n", &a  )
+}
+
+Address of a variable : c00002c008
+
+Program exited.
+
+2)
+package main
+
+import "fmt"
+
+func main() {
+   var a int = 10  
+   var b int = 20 
+   fmt.Printf("Address of a variable is : %x\n", &a , &b )
+}
+
+
+Address of a variable is : c00002c008
+%!(EXTRA *int=0xc00002c040)
+Program exited.
+
+3)
+
+package main
+
+import "fmt"
+
+func main() {
+   var a int = 200   
+   var ip *int      
+   ip = &a  
+
+   fmt.Printf("Address of a variable: %x\n", &a  )
+
+   
+   fmt.Printf("Address stored in ip variable: %x\n", ip )
+
+   
+   fmt.Printf("Value of *ip variable: %d\n", *ip )
+}
+
+
+Address of a variable: c00002c008
+Address stored in ip variable: c00002c008
+Value of *ip variable: 200
+
+Program exited.
+
+4)
+package main
+
+import "fmt"
+
+func main() {
+   var  ptr *int
+
+   fmt.Printf("The value of ptr is : %x\n", ptr  )
+}
+
+The value of ptr is : 0
+
+Program exited.
+
+
+5)
+
+package main 
+  
+import "fmt"
+  
+func main() { 
+  
+    
+    x := 100
+    y := 200 
+      
+    
+    fmt.Printf("Type of variable x is %T\n", x) 
+    fmt.Printf("Value of x in hexdecimal is %X\n", x) 
+    fmt.Printf("Value of x in decimal is %v\n", x) 
+      
+    fmt.Printf("Type of variable y is %T\n", y) 
+    fmt.Printf("Value of y in hexdecimal is %X\n", y) 
+    fmt.Printf("Value of y in decimal is %v\n", y)     
+      }
+
+Type of variable x is int
+Value of x in hexdecimal is 64
+Value of x in decimal is 100
+Type of variable y is int
+Value of y in hexdecimal is C8
+Value of y in decimal is 200
+
+Program exited.
+
+6)
+
+package main 
+  
+import "fmt"
+  
+func main() { 
+  
+    
+    var x int = 10000
+      
+    
+    var p *int
+      
+    
+    p = &x 
+  
+        
+    fmt.Println("Value stored in x = ", x) 
+    fmt.Println("Address of x = ", &x) 
+    fmt.Println("Value stored in variable p = ", p) 
+}
+
+
+Value stored in x =  10000
+Address of x =  0xc0000b6020
+Value stored in variable p =  0xc0000b6020
+
+Program exited.
+
+7)
+
+package main 
+  
+import "fmt"
+  
+func main() { 
+  
+      
+    var i *int
+      
+    
+    fmt.Println("i = ", i) 
+} 
+
+
+i =  <nil>
+
+Program exited.
+
+8)
+
+package main 
+   
+import "fmt"
+   
+func main() { 
+   
+    
+    var y = 222 
+       
+    
+    var p = &y 
+   
+    fmt.Println("Value stored in y = ", y) 
+    fmt.Println("Address of y = ", &y) 
+    fmt.Println("Value stored in pointer variable p = ", p) 
+  
+    fmt.Println("Value stored in y(*p) = ", *p) 
+  }
+
+Value stored in y =  222
+Address of y =  0xc000094010
+Value stored in pointer variable p =  0xc000094010
+Value stored in y(*p) =  222
+
+Program exited.
+
+9)
+
+package main 
+  
+import "fmt"
+  
+func main() { 
+  
+   
+    y := 100 
+      
+   
+    p := &y 
+  
+    fmt.Println("Value stored in y = ", y) 
+    fmt.Println("Address of y = ", &y) 
+    fmt.Println("Value stored in pointer variable p = ", p) 
+}
+
+Value stored in y =  100
+Address of y =  0xc00002c008
+Value stored in pointer variable p =  0xc00002c008
+
+Program exited.
+
+10)
+
+
+
+package main
+
+import "fmt"
+
+
+func jhansi(ival int) {
+	ival = 0
+}
+
+
+func suji(iptr *int) {
+	*iptr = 0
+}
+
+func main() {
+	i := 1
+	fmt.Println("initial:", i)
+
+	jhansi(i)
+	fmt.Println("jhansi:", i)
+
+	
+	suji(&i)
+	fmt.Println("suji:", i)
+
+	
+	fmt.Println("pointer:", &i)
+}
+
+
+initial: 1
+jhansi: 1
+suji: 0
+pointer: 0xc00002c008
+
+Program exited.
